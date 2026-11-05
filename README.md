@@ -64,12 +64,11 @@ The suite covers authentication, full CRUD flows, search, filtering, pagination,
 1. Download or clone this repository.
 2. Open Postman and **import** the files in `collection/` and `environment/`.
 3. Select the **DummyJSON - Dev** environment (top right).
-4. Right-click the collection, choose **Run**, and keep these two settings:
+4. Add `dummyjson.com` to the allowlist: **Cookies, then Manage Cookies, then Domain Allowlist**. The collection-level pre-request script needs this permission to clear cookies (see Findings below).
+5. Right-click the collection, choose **Run**, and keep these two settings:
    - tick **Run collection without using stored cookies**
    - untick **Save cookies after collection run**
-5. Click **Run**. `Login` runs first and saves the token for the requests that need it.
-6. In Postman, add `dummyjson.com` to **Cookies, then Manage Cookies, then Domain Allowlist**. The collection-level pre-request script needs this permission to clear cookies (see Findings below).
-
+6. Click **Run**. `Login` runs first and saves the token for the requests that need it.
 The `access_token` variable is not included in the environment file. `Login` creates it automatically when it runs.
 
 ## Findings and notes
